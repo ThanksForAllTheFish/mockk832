@@ -6,6 +6,7 @@ group = "org.t4atf"
 version = "1.0-SNAPSHOT"
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -16,8 +17,8 @@ kotlin {
 }
 
 dependencies {
-    testImplementation "org.jetbrains.kotlin:kotlin-test"
-    testImplementation "io.mockk:mockk:1.12.5"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:1.7.10"
+    testImplementation "io.mockk:mockk:built-locally"
 }
 
 tasks.test {
