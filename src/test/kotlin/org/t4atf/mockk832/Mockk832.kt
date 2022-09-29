@@ -11,18 +11,17 @@ class Leaf : Node()
 
 interface Factory {
     fun create() : Node
+    fun copy(node: Node) : Node
 }
 
-class FactoryImpl : Factory {
-    override fun create(): Node = Root()
-}
-
-class MyTest {
+open class MyTest {
     @Test
-    fun aTest() {
+    open fun aTest() {
         val mockk = mockk<Factory>()
         every { mockk.create() } returns Leaf()
 
         println(mockk.create())
+
+        every { mockk.copy(any()) } returns Root()
     }
 }
